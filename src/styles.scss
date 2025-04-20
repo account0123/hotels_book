@@ -145,11 +145,11 @@
                 direction: rtl;
                 display: block;
                 border-radius: 0;
-                color: var(--blackColor);
-                font-size: var(--fontSize);
+                color: var(--primary-fg);
+                font-size: var(--font-size);
                 box-shadow: unset !important;
-                transition: var(--transition);
-                background-color: var(--whiteColor);
+                transition: var(--transition-duration);
+                background-color: var(--secondary-bg);
                 padding: {
                     right: 0;
                     left: 0;
