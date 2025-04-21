@@ -5,11 +5,16 @@
     --accent-hover: #924dff;
     --font-size: 16px;
     --secondary-bg: #fcfcfc;
+    --tertiary-bg: #f8f8f8;
     --primary-fg: #060606;
     --primary-fg-hover: #7d35f1;
     --primary-fg-light: #efefef;
     --secondary-fg: #696969;
+    --transition: .3s;
     --transition-duration: .3s;
+
+    --border-radius-out: 10px;
+    --border-radius-in: 3px;
 }
 
 .page-header {

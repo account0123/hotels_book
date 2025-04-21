@@ -1,0 +1,109 @@
+.left-sidebar {
+    background-color: var(--tertiary-bg);
+    border-radius: var(--border-radius-out);
+    padding: 1.5rem;
+}
+
+.widget {
+    border-bottom: 1px solid rgb(104, 105, 125);
+    padding: {
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+    // Se expande el borde hacia los lados sin alterar la posición
+    margin: {
+        left: -1.5rem;
+        right: -1.5rem;
+        bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 1em;
+    }
+
+    .form-select {
+        background-color: var(--secondary-bg);
+        border: 1px solid var(--bs-gray-300);
+        box-shadow: unset;
+        color: var(--primary-fg);
+        cursor: pointer;
+        height: 3.5rem;
+        font-size: var(--font-size);
+        border-radius: var(--border-radius-in);
+        padding: {
+            left: 1.25em;
+            right: 1.25em;
+        }
+        transition: var(--transition);
+
+        &:focus {
+            border-color: var(--accent);
+        }
+    }
+}
+
+.widget-form {
+    position: relative;
+
+    .form-control {
+        background-color: var(--secondary-bg);
+        height: 3.5rem;
+        padding-left: 40px;
+    }
+    .search-btn {
+        top: 1em;
+        left: 1em;
+        padding: 0;
+        border: none;
+        position: absolute;
+        background-color: transparent;
+        transition: var(--transition-duration);
+
+        &:hover {
+            color: var(--accent);
+        }
+    }
+}
+
+.hotel-sort {
+    padding-right: 0.64em;
+
+    ul {
+        list-style: none;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .form-select {
+        background: {
+            color: transparent;
+            position: right 0 center;
+        };
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        margin-bottom: 3px;
+        padding: {
+            top: 0;
+            right: 0;
+            bottom: 3px;
+            left: 22px;
+        }
+        width: 18em;
+    }
+}
+
+.hotel-list {
+    list-style: none;
+    padding-right: 0;
+    margin-bottom: 0;
+
+    li {
+        background-color: var(--tertiary-bg);
+        border-radius: var(--border-radius-in);
+        margin-bottom: 25px;
+        padding: 30px;
+    }
+}

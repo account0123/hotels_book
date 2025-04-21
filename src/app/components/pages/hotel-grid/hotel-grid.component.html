@@ -1,0 +1,45 @@
+<div class="p-tb-100">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-12">
+                <div class="left-sidebar">
+                    <div class="widget">
+                        <h3>Filtros</h3>
+                        <form class="widget-form">
+                            <input class="form-control" type="search" name="q" placeholder="Buscar">
+                            <button class="search-btn" type="submit">
+                                <i class="ri-search-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="widget">
+                        <h3>Precios</h3>
+                        <select class="form-select">
+                            @for (precio of precios; track precio; let first = $first) {
+                                <option value="{{precio}}">${{precio}} USD</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <div class="hotel-sort">
+                    <ul class="d-flex justify-content-between sorting">
+                        <li class="">{{hoteles.length}} hoteles</li>
+                        <select class="form-select">
+                            <option value="0">Relevancia</option>
+                            <option value="1">Precio: Menor a mayor</option>
+                            <option value="2">Precio: Mayor a menor</option>
+                        </select>
+                    </ul>
+                    <ul class="hotel-list">
+                        <li><hotel-box [hotel]="{id: '1',name: 'Hotel California', address: 'Los Angeles 322, California', price: 200, flags: 31, rating: 4.8}" [reviewCount]=100></hotel-box></li>
+                        <li><hotel-box [hotel]="{id: '2',name: 'Hotel Transilvania', address: 'Los Muermos 111, Transilvania', price: 250, flags: 31, rating: 4.7}" [reviewCount]=130></hotel-box></li>
+                        <li><hotel-box [hotel]="{id: '3',name: 'Hotel ISBI', address: 'Marcoleta 144, Santiago', price: 150, flags: 31, rating: 4.7}" [reviewCount]=200></hotel-box></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
