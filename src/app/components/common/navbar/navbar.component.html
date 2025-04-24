@@ -1,10 +1,18 @@
 <div class="navbar-area">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" [class.active]="isOpen">
             <!-- Logo -->
             <a class="navbar__brand" href="#">
                 <img src="/images/logo.png" alt="logo" width="120">
             </a>
+            <!-- Menu desplegable -->
+             <button class="navbar-toggler" (click)="toggleNavbar()" aria-controls="navbarOptions" aria-expanded="false" aria-label="Alternar vista navbar">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
             <!-- Acciones -->
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav navbar__actions">
@@ -19,8 +27,20 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav navbar__actions for-responsive">
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Reserva</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+                </ul>
+
                 <!-- Form -->
-                 <div>
+                 <div class="navbar__other-actions">
                     <form class="search-box" action="" method="get">
                         <input class="form-control" type="search" name="q" placeholder="Buscar">
                         <button class="search-btn" type="submit"><i class="ri-search-eye-line"></i></button>
