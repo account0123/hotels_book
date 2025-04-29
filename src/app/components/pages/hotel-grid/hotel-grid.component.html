@@ -34,9 +34,9 @@
                         </select>
                     </ul>
                     <ul class="hotel-list">
-                        <li><hotel-box [hotel]="hoteles[0]" [reviewCount]=100></hotel-box></li>
-                        <li><hotel-box [hotel]="hoteles[1]" [reviewCount]=130></hotel-box></li>
-                        <li><hotel-box [hotel]="hoteles[2]" [reviewCount]=200></hotel-box></li>
+                        @for (hotel of hoteles; track hotel.id) {
+                            <li><hotel-box [hotel]="hotel" [reviewCount]=100></hotel-box></li>
+                        }
                     </ul>
                 </div>
             </div>

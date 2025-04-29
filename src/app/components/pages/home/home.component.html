@@ -4,26 +4,26 @@
         <div class="page-header__content">
             <h2>Hoteles en cualquier parte del mundo</h2>
             <p>Buscar hoteles</p>
-            <form class="banner-form-style">
+            <form class="banner-form-style" [formGroup]="availableHotelForm" (ngSubmit)="fetchAvailableHotels()">
                 <div class="row align-items-center m0">
-                    <div class="col-xl-3 col-lg-6 col-sm-6">
+                    <div class="city-control col-xl-3 col-lg-6 col-sm-6">
                         <div class="form-group">
                             <label for="">Lugar</label>
-                            <input type="text" class="form-control" placeholder="Hacia donde vas?">
+                            <input type="text" formControlName="city" class="form-control" placeholder="Hacia donde vas?">
                             <img src="/images/icons/search.svg" alt="buscar">
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-sm-6">
                         <div class="form-group"> 
                             <label for="">Fecha Entrada</label>
-                            <dp-date-picker theme="dp-material" placeholder="Ingresar Fecha" [config]="datePickerConfig" required="true"></dp-date-picker>
+                            <dp-date-picker theme="dp-material" formControlName="startDate" placeholder="Ingresar Fecha" [config]="datePickerConfig" required="true"></dp-date-picker>
                             <img src="/images/icons/calendar.svg" alt="calendario">
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-sm-6">
                         <div class="form-group">
                             <label for="">Fecha Salida</label>
-                            <dp-date-picker theme="dp-material" placeholder="Ingresar Fecha" [config]="datePickerConfig" required="true"></dp-date-picker>
+                            <dp-date-picker theme="dp-material" formControlName="endDate" placeholder="Ingresar Fecha" [config]="datePickerConfig" required="true"></dp-date-picker>
                             <img src="/images/icons/calendar.svg" alt="calendario">
                         </div>
                     </div>
@@ -47,4 +47,4 @@
     </div>
 </div>
 <!-- Hotel Grid -->
-<hotel-grid></hotel-grid>
+<hotel-grid [hoteles]="hotels"></hotel-grid>

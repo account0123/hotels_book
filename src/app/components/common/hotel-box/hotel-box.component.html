@@ -1,15 +1,16 @@
 <div class="row align-items-center justify-content-center">
     <div class="col-xl-5 col-lg-12 col-sm-12">
         <a class="d-block">
-            <img src="/images/hotels/{{hotel().id}}.jpg" alt="{{hotel().name}}" width="300" height="200">
+            <img src="{{hotel?.picture}}" alt="{{hotel?.name}}" width="300" height="200">
         </a>
     </div>
     <div class="col-xl-4 col-lg-6 col-sm-7">
         <div class="content">
             <h3>
-                <a href="#">{{hotel().name}}</a>
+                <a href="#">{{hotel?.name}}</a>
             </h3>
-            <p>{{hotel().address}}</p>
+            <p>{{hotel?.description}}</p>
+            <p>{{hotel?.street}} {{hotel?.number}}, {{hotel?.cityName}}</p>
             <div class="rating">
                 <i class="ri-star-fill"></i>
                 <i class="ri-star-fill"></i>
@@ -17,28 +18,23 @@
                 <i class="ri-star-fill"></i>
                 <i class="ri-star-half-fill"></i>
             </div>
-            <p>{{rating()}}/5 Maravilloso ({{reviewCount()}} reviews)</p>
-            <div class="price">{{hotel().price | currency}} <span>por noche</span></div>
+            <p>
+                @if (rating()) {
+                    {{rating()}}/5 Maravilloso
+                } ({{reviewCount()}} reviews)</p>
+            <div class="price">{{hotel?.price | currency}} <span>por noche</span></div>
             <a class="default-btn" href="#">Reservar</a>
         </div>
     </div>
     <div class="col-xl-3 col-lg-6 col-sm-5">
         <ul class="features">
-            @if (flags().freeWifi) {
-                <li><i class="ri-wifi-line"></i>Wifi gratis</li>
-            }
-            @if (flags().freeParking) {
-                <li><i class="ri-roadster-line"></i>Parking gratis</li>
-            }
-            @if (flags().restaurant) {
-                <li><i class="ri-restaurant-2-line"></i>Restaurante</li>
-            }
-            @if (flags().ac) {
-                <li><i class="ri-wheelchair-line"></i>Aire acondicionado</li>
-            }
-            @if (flags().gym) {
-                <li><i class="ri-riding-line"></i>Gimnasio</li>
-            }
+           @for (service of hotel?.services; track service.id) {
+                <li>
+                    <!-- <i class="service.id | icon"></i> throws parse error :/-->
+                    <i [class]="service.id | icon"></i>
+                    <span>{{service.name}}</span>
+                </li>
+           }
         </ul>
     </div>
 </div>
